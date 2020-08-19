@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+//props in React
+// props.children 
+class Main extends React.Component{
+  letsShow(){
+    alert("HI EVERYONE ...")
+  }
+  render(){
+    return(
+      <div>
+        <h1> Hi {this.props.name}</h1>
+        <button style={{padding: 20.0, 
+        background: 'purple',
+        color: 'white',
+        border: 'none',
+        cursor: 'pointer'
+
+        }} onClick={this.letsShow}>
+          CLICK HERE 
+        </button>
+        <h1>{this.props.children}</h1>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default Main
